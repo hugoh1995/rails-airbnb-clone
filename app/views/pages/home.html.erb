@@ -5,3 +5,14 @@
 <p>Race: <%= dog.breed.name %></p>
 <p>Description: <%= dog.description %></p>
 <% end %>
+<%= cl_image_tag @users.second.photo.filename, :transformation=>[
+  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
+  {:width=>200, :crop=>"scale"}
+  ] %>
+<% @dogs.each do |dog| %>
+<h2><%= dog.name %></h2><br>
+<%= cl_image_tag dog.photo.filename, :transformation=>[
+  {:width=>400, :height=>400},
+  {:width=>200, :crop=>"scale"}] %>
+<p>Description: <%= dog.description %></p>
+<% end %>
