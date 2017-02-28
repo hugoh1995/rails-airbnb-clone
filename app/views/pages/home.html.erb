@@ -1,18 +1,51 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% @dogs.each do |dog| %>
-<h2><%= dog.name %></h2><br>
-<p>Race: <%= dog.breed.name %></p>
-<p>Description: <%= dog.description %></p>
-<% end %>
-<%= cl_image_tag @users.second.photo.filename, :transformation=>[
-  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
-  {:width=>200, :crop=>"scale"}
-  ] %>
-<% @dogs.each do |dog| %>
-<h2><%= dog.name %></h2><br>
-<%= cl_image_tag dog.photo.filename, :transformation=>[
-  {:width=>400, :height=>400},
-  {:width=>200, :crop=>"scale"}] %>
-<p>Description: <%= dog.description %></p>
-<% end %>
+<!-- Banner-top -->
+ <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_url('background.jpg') %>);">
+    <div class="row">
+      <div class="banner-content">
+        <div class="col-lg-12">
+          <div class="name"><%= image_tag('name.png') %></div>
+          <p>Dogs on demand, in your neighbourhood.</p>
+          <a class="btn btn-primary btn-lg">Find a dog</a>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Cards -->
+<div class="container card-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dogs.first.photo.url %>); background-size: 100%;height: 200px;">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2><%= @dogs.first.name %></h2>
+          <p><%= @dogs.first.description %></p>
+        </div>
+        <a href="#" class="card-link"></a>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dogs.second.photo.url %>); background-size: 100%;height: 200px;">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2><%= @dogs.second.name %></h2>
+          <p><%= @dogs.second.description %></p>
+        </div>
+        <a href="#" class="card-link"></a>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dogs.third.photo.url %>); background-size: 100%;height: 200px;">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2><%= @dogs.third.name %></h2>
+          <p><%= @dogs.third.description %></p>
+        </div>
+        <a href="#" class="card-link"></a>
+      </div>
+    </div>
+
+  </div>
+</div>
