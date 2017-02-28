@@ -9,9 +9,10 @@ require 'nokogiri'
 require 'open-uri'
 require 'as-duration'
 
+Request.destroy_all
+Dog.destroy_all
 Breed.destroy_all
 User.destroy_all
-Request.destroy_all
 
 breeds = []
   doc = Nokogiri::HTML(open("http://dogtime.com/dog-breeds"))
@@ -20,7 +21,7 @@ breeds = []
       end
 
 breeds.each do |breed|
-  Breed.create({name: breed})
+  Breed.create!({name: breed})
 
 end
 
