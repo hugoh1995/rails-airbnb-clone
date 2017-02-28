@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <h2><%= @dog.name%></h2>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dog.photo.url %>); background-size: 100%;height: 200px;">
+      </div>
+      <p><%= @dog.breed.name%>, <%= @dog.birthdate%></p>
+    </div>
+    <div class="col-lg-4">
+      <h2>Description</h2>
+      <%= @dog.description%>
+      <h2>Personality</h2>
+    </div>
+  </div>
+</div>
+
