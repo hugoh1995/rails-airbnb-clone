@@ -1,1 +1,28 @@
 // Your footer style
+footer{
+	padding-top: 15px;
+	background-color: #F1F2F2;
+	padding-bottom: 25px
+}
+
+h2{
+	font-size: 1.1em
+}
+
+footer ul{
+	font-size: 0.8em;
+	padding-left:0px;
+}
+
+li{
+	list-style-type:none;
+}
+
+a{
+	color: black;
+}
+
+a:hover{
+	color: #4CD6A3;
+	text-decoration:none;
+}
