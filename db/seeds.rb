@@ -15,6 +15,7 @@ Breed.destroy_all
 User.destroy_all
 
 breeds = []
+      breeds << "default"
   doc = Nokogiri::HTML(open("http://dogtime.com/dog-breeds"))
       doc.search('.post-title').each do |element|
         breeds << element.text()
