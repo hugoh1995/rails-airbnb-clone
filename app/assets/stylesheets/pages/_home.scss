@@ -28,6 +28,8 @@
 // <!-- Cards -->
 .card-container {
   margin-top: 50px;
+  margin-bottom: 50px;
+
 }
 
 .card {
@@ -37,6 +39,7 @@
   color: white;
   position: relative;
   border-radius: 5px;
+  margin: 20px;
 }
 .card-user {
   position: absolute;
