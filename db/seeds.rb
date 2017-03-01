@@ -15,6 +15,7 @@ Breed.destroy_all
 User.destroy_all
 
 breeds = []
+      breeds << "default"
   doc = Nokogiri::HTML(open("http://dogtime.com/dog-breeds"))
       doc.search('.post-title').each do |element|
         breeds << element.text()
@@ -75,7 +76,41 @@ d16 = Dog.create({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500
 d17 = Dog.create({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(3), breed: Breed.all.sample, user: u17, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488277383/13659198_10154426424439802_3999486537416213619_n_h1duam.jpg"})
 d18 = Dog.create({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u18, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488277383/IMG_0005_ivdiks.jpg"})
 d19 = Dog.create({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u19, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488270844/dog_3_egpjs8.jpg"})
-d20 = Dog.create({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u20, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488271925/image2_p0khry.jpg"})
+d20 = Dog.create({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u20, remote_photo_url: "http://image/u mage2_p0khry.jpg"})
+
+
+
+a1 = Address.create({street: "2 rue Charles-Saint-Venant", city: "Lille" , country: "France" , user: u1})
+a2 = Address.create({street: "3 rue Gantois", city: "Lille" , country: "France" , user: u2})
+a3 = Address.create({street: "6 rue Jean-Bart", city: "Lille" , country: "France" , user: u3})
+a4 = Address.create({street: "10 rue du Molinel", city: "Lille" , country: "France" , user: u4})
+a5 = Address.create({street: "5 rue de Paris", city: "Lille" , country: "France" , user: u5})
+a6 = Address.create({street: "1 place des Patiniers", city: "Lille" , country: "France" , user: u6})
+a7 = Address.create({street: "2 rue Paul Duez", city: "Lille" , country: "France" , user: u7})
+a8 = Address.create({street: "3 rue Paul-Ramadier", city: "Lille" , country: "France" , user: u8})
+a9 = Address.create({street: "4 rue aux Péterinck", city: "Lille" , country: "France" , user: u9})
+a10 = Address.create({street: "6 rue Pharaon de Winter", city: "Lille" , country: "France" , user: u10})
+a11 = Address.create({street: "7 place Philippe Lebon", city: "Lille", country: "France", user: u11})
+a12 = Address.create({street: "8 rue Philippe de Comines", city: "Lille", country: "France", user: u12})
+a13 = Address.create({street: "2 rue de la Baignerie", city: "Lille", country: "France", user: u13})
+a14 = Address.create({street: "3 rue de Bailleul", city: "Lille", country: "France", user: u14})
+a15 = Address.create({street: "5 rue du Barbier de Maes", city: "Lille", country: "France", user: u15})
+a16 = Address.create({street: "7 rue Barthélémy-Delespaul", city: "Lille", country: "France", user: u16})
+a17 = Address.create({street: "8 rue Basse", city: "Lille", country: "France", user: u17})
+a18 = Address.create({street: "9 rue du Bastion-du-Meunier", city: "Lille", country: "France", user: u18})
+a19 = Address.create({street: "10 rue Bartholomé-Masurel", city: "Lille", country: "France", user: u19})
+a20 = Address.create({street: "11 rue Baudon", city: "Lille", country: "France", user: u20})
+a21 = Address.create({street: "12 rue Beaucourt-Decourchelle", city: "Lille", country: "France", user: u21})
+a22 = Address.create({street: "17 rue de Bellevue", city: "Lille", country: "France", user: u22})
+a23 = Address.create({street: "3 rue Benvignat", city: "Lille", country: "France", user: u23})
+a24 = Address.create({street: "8 rue de Béthune", city: "Lille", country: "France", user: u24})
+a25 = Address.create({street: "9 boulevard Bigo-Danel", city: "Lille", country: "France", user: u25})
+a26 = Address.create({street: "3 place aux Bleuets", city: "Lille", country: "France", user: u26})
+a27 = Address.create({street: "1 rue des Bonnes-Rappes", city: "Lille", country: "France", user: u27})
+a28 = Address.create({street: "2 rue des Bons-Enfants", city: "Lille", country: "France", user: u28})
+a29 = Address.create({street: "4 rue Broca", city: "Lille", country: "France", user: u29})
+a30 = Address.create({street: "2 rue Boucher-de-Perthes", city: "Lille" , country: "France" , user: u30}
+
 
 starttime = [Faker::Time.forward(23), Faker::Time.forward(23), Faker::Time.backward(14)].sample
 endtime = starttime + 3600* rand(1..10)

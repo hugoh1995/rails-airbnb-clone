@@ -10,11 +10,19 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
+  <% if current_page?(root_path) %>
     <%= render 'shared/navbard'%>
     <p class="notice hidden"><%= notice %></p>
     <p class="alert hidden"><%= alert %></p>
     <%= yield %>
     <%= render "shared/footer" %>
     <%= javascript_include_tag 'application' %>
+  <% else %>
+    <%= render 'shared/navbard'%>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+  <% end %>
   </body>
 </html>
