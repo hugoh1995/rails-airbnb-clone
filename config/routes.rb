@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :dogs, only:[:index, :show]
+
   devise_for :users
   root to: 'pages#home'
   # namespace :account do
