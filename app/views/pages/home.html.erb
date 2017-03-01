@@ -5,7 +5,7 @@
         <div class="col-lg-12">
           <div class="name"><%= image_tag('name.png') %></div>
           <p>Dogs on demand, in your neighbourhood.</p>
-          <a class="btn btn-primary btn-lg">Find a dog</a>
+          <%= link_to "Find a dog", dogs_path ,:class=>"btn btn-primary btn-lg"  %>
         </div>
       </div>
     </div>
