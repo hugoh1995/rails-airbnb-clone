@@ -110,7 +110,6 @@ d19 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(150
 d20 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u20, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488373239/13833072_10201871939276765_1914666971_o_akxw8y.jpg"})
 
 
-
 starttime = [Faker::Time.forward(23), Faker::Time.forward(23), Faker::Time.backward(14)].sample
 endtime = starttime + 3600* rand(1..10)
 if endtime > Time.now
