@@ -25,6 +25,8 @@ gem 'figaro'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 
+gem 'omniauth-facebook'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
