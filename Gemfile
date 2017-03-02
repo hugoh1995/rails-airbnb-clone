@@ -19,6 +19,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'faker'
 gem 'as-duration'
+gem "geocoder"
 
 gem 'figaro'
 gem 'cloudinary'
