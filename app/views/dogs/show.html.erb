@@ -14,3 +14,26 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-lg-2">
+  </div>
+  <div class="col-lg-8">
+    <div class="row row-bg">
+    <%= simple_form_for [@dog, @request] do |f| %>
+        <div class="col-lg-5">
+            <%= f.input :start_datetime %>
+        </div>
+        <div class="col-lg-5">
+            <%= f.input :end_datetime %>
+        </div>
+            <%= f.input :dog_id, as: :hidden, input_html: {value: @dog.id} %>
+            <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+        <div class="col-lg-2">
+            <%= f.button :submit, "Book", input_html: { class: 'btn btn-primary' } %>
+        </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+

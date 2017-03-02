@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :dogs, only:[:index, :show]
+  resources :dogs, only:[:index, :show] do
+    resources :requests, only: [:create]
+  end
+  resources :requests
   #human
   get 'pages/profile'
   post 'pages/info'
