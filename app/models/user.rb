@@ -7,6 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :dogs, dependent: :destroy
+  has_many :address, dependent: :destroy
 
   def add_dog
     self.dogs.create(breed: Breed.find_by(name: "default"))
