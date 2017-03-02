@@ -10,6 +10,11 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
+  #Reservation
+  def reservations
+    @request = Request.find_by_user_id(current_user.id)
+  end
+
   def info
     current_user.update_attributes(user_params)
     redirect_to(:back)
