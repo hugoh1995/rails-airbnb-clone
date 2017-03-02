@@ -41,7 +41,7 @@ class PagesController < ApplicationController
 
   #human profile
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone_number, :description)
+    params.require(:user).permit(:first_name, :last_name, :phone_number, :description, :dogs)
   end
 
   def photo_params
@@ -50,7 +50,7 @@ class PagesController < ApplicationController
 
   #dog profile
   def dog_params
-    params.require(:dog).permit(:name, :description, :birthdate)
+    params.require(:dog).permit(:name, :description, :birthdate, :breed_id)
   end
 
   def dog_photo_params
