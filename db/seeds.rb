@@ -26,6 +26,7 @@ breeds.each do |breed|
   Breed.create!({name: breed})
 end
 
+
 a1 = Address.create!({street: "2 rue Charles-Saint-Venant", city: "Lille" , country: "France"})
 a2 = Address.create!({street: "3 rue Gantois", city: "Lille" , country: "France"})
 a3 = Address.create!({street: "6 rue Jean-Bart", city: "Lille" , country: "France"})

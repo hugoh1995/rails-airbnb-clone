@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'requests/show'
-
-  resources :dogs, only:[:index, :show]
   resources :requests
+
+  resources :dogs, only:[:index, :show] do
+    resources :requests, only: [:create]
+  end
 
   #human
   get 'pages/profile'
