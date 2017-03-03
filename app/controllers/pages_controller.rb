@@ -30,11 +30,6 @@ class PagesController < ApplicationController
     redirect_to(:back)
   end
 
-  #Reservation
-  def reservations
-    @request = Request.find_by_user_id(current_user.id)
-  end
-
   #dog_profile
   def dog
     @dog = current_user.dogs.first
