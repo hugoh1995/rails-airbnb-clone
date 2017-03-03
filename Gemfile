@@ -11,6 +11,10 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem 'country_select'
 
+#date-time picker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
