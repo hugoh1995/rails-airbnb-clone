@@ -37,10 +37,12 @@ class User < ApplicationRecord
   end
 
   def add_dog
+    return unless self.dogs.empty?
     self.dogs.create(breed: Breed.find_by(name: "default"))
   end
 
   def add_address
+    return if self.address.present?
     self.address = Address.new(country: "", city: "", street: "")
   end
 end
