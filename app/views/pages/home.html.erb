@@ -6,6 +6,9 @@
           <div class="name"><%= image_tag('name.png') %></div>
           <p>Dogs on demand, in your neighbourhood.</p>
           <%= link_to "Find a dog", dogs_path ,:class=>"btn btn-primary btn-lg"  %>
+          <%= form_tag('/dogs') do -%>
+            <div><%= submit_tag 'Save' %></div>
+          <% end -%>
         </div>
       </div>
     </div>
