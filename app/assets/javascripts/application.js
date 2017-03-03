@@ -3,4 +3,7 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
+//= require moment
+//= require moment/fr
+//= require bootstrap-datetimepicker
 //= require_tree .

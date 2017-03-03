@@ -12,6 +12,7 @@ class DogsController < ApplicationController
   def show
     @dog = Dog.find(params[:id])
     @request = Request.new
+    @addresses = Address.all
   end
 
 end
