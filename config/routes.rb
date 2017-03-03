@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'pages/profile'
   post 'pages/info'
   post 'pages/photo'
+  post 'pages/address'
 
   #dog
   get 'pages/dog'
