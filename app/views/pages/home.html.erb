@@ -5,9 +5,9 @@
         <div class="col-lg-12">
           <div class="name"><%= image_tag('name.png') %></div>
           <p>Dogs on demand, in your neighbourhood.</p>
-          <%= link_to "Find a dog", dogs_path ,:class=>"btn btn-primary btn-lg"  %>
-          <%= form_tag('/dogs') do -%>
-            <div><%= submit_tag 'Save' %></div>
+          <%= form_tag(dogs_path, method: 'GET') do -%>
+            <input type="text" class="form-control" placeholder="Where" name="place">
+            <div><%= submit_tag "Find a dog" ,:class=>"btn btn-primary btn-lg" %></div>
           <% end -%>
         </div>
       </div>
