@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   def show
   	@request = Request.find(params[:id])
   end
-  
+
   def new
     @request = Request.new
     @user = current_user
