@@ -1,17 +1,42 @@
-<div class="container card-container">
-  <div class="row">
-    <% @dogs.each do |dog|%>
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= dog.photo.url %>); background-size: 100%;height: 200px;">
-          <div class="card-category">Near from you</div>
-          <div class="card-description">
-            <h2><%= dog.name %></h2>
-            <p><%= dog.description %></p>
+<div class="row">
+  <div class="container card-container col-xs-12 col-sm-8 col-md-8 col-lg-8">
+    <div class="row">
+      <% @dogs.each do |dog|%>
+        <% if dog.name != nil %>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= dog.photo.url %>); background-size: 100%;height: 200px;">
+              <div class="card-category">Near from you</div>
+              <div class="card-description">
+                <h2><%= dog.name %></h2>
+                <p><%= dog.description %></p>
+              </div>
+              <%= link_to "", dog_path(dog) ,:class=>"card-link"  %>
+            </div>
           </div>
-          <%= link_to "", dog_path(dog) ,:class=>"card-link"  %>
-        </div>
-      </div>
-    <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="container col-xs-12 col-sm-4 col-md-4 col-lg-4" style="position: fixed; right: 0;">
+    <div id="map" style="position: fixed; overflow-y: hidden; width: 100%; height: 700px;"></div>
+    <div class="">
+      <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+          $(document).ready(function() {
+            var handler = Gmaps.build('Google');
+            handler.buildMap({ internal: { id: 'map' } }, function() {
+              markers = handler.addMarkers(<%= raw @hash.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+              if (markers.length == 0) {
+                handler.getMap().setZoom(2);
+              } else if (markers.length == 1) {
+                handler.getMap().setZoom(14);
+              }
+            });
+          });
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-

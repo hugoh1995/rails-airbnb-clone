@@ -7,6 +7,14 @@ gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
+gem "coffee-rails"
+gem "gmaps4rails"
+gem 'country_select'
+
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -19,6 +27,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'faker'
 gem 'as-duration'
+gem "geocoder"
 
 gem 'figaro'
 gem 'cloudinary'

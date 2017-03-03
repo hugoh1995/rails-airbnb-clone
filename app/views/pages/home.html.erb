@@ -6,6 +6,9 @@
           <div class="name"><%= image_tag('name.png') %></div>
           <p>Dogs on demand, in your neighbourhood.</p>
           <%= link_to "Find a dog", dogs_path ,:class=>"btn btn-primary btn-lg"  %>
+          <%= form_tag('/dogs') do -%>
+            <div><%= submit_tag 'Save' %></div>
+          <% end -%>
         </div>
       </div>
     </div>
@@ -15,33 +18,33 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dogs.first.photo.url %>); background-size: 100%;height: 200px;">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dogs.all[-1].photo.url %>); background-size: 100%;height: 200px;">
         <div class="card-category">Popular</div>
         <div class="card-description">
-          <h2><%= @dogs.first.name %></h2>
-          <p><%= @dogs.first.description %></p>
+          <h2><%= @dogs.all[-1].name %></h2>
+          <p><%= @dogs.all[-1].description %></p>
         </div>
         <a href="#" class="card-link"></a>
       </div>
     </div>
 
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dogs.second.photo.url %>); background-size: 100%;height: 200px;">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dogs.all[-2].photo.url %>); background-size: 100%;height: 200px;">
         <div class="card-category">Popular</div>
         <div class="card-description">
-          <h2><%= @dogs.second.name %></h2>
-          <p><%= @dogs.second.description %></p>
+          <h2><%= @dogs.all[-2].name %></h2>
+          <p><%= @dogs.all[-2].description %></p>
         </div>
         <a href="#" class="card-link"></a>
       </div>
     </div>
 
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dogs.third.photo.url %>); background-size: 100%;height: 200px;">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @dogs.all[-3].photo.url %>); background-size: 100%;height: 200px;">
         <div class="card-category">Popular</div>
         <div class="card-description">
-          <h2><%= @dogs.third.name %></h2>
-          <p><%= @dogs.third.description %></p>
+          <h2><%= @dogs.all[-3].name %></h2>
+          <p><%= @dogs.all[-3].description %></p>
         </div>
         <a href="#" class="card-link"></a>
       </div>

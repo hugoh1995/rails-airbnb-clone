@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   #human profile
   def profile
     @user = current_user
+    @address = current_user.address
   end
 
   def info
@@ -18,6 +19,16 @@ class PagesController < ApplicationController
   def photo
     current_user.update_attributes(photo_params)
     redirect_to(:back)
+  end
+
+  def address
+    current_user.address.update_attributes(address_params)
+    redirect_to(:back)
+  end
+
+  #Reservation
+  def reservations
+    @request = Request.find_by_user_id(current_user.id)
   end
 
   #dog_profile
@@ -41,16 +52,20 @@ class PagesController < ApplicationController
 
   #human profile
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone_number, :description)
+    params.require(:user).permit(:first_name, :last_name, :phone_number, :description, :dogs)
   end
 
   def photo_params
     params.require(:user).permit(:photo, :photo_cache)
   end
 
+  def address_params
+    params.require(:address).permit(:city, :street, :country)
+  end
+
   #dog profile
   def dog_params
-    params.require(:dog).permit(:name, :description, :birthdate)
+    params.require(:dog).permit(:name, :description, :birthdate, :breed_id)
   end
 
   def dog_photo_params
