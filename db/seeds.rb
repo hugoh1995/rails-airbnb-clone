@@ -26,6 +26,7 @@ breeds.each do |breed|
   Breed.create!({name: breed})
 end
 
+
 a1 = Address.create!({street: "2 rue Charles-Saint-Venant", city: "Lille" , country: "France"})
 a2 = Address.create!({street: "3 rue Gantois", city: "Lille" , country: "France"})
 a3 = Address.create!({street: "6 rue Jean-Bart", city: "Lille" , country: "France"})
@@ -108,7 +109,6 @@ d17 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(150
 d18 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u18, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488277383/IMG_0005_ivdiks.jpg"})
 d19 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u19, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488270844/dog_3_egpjs8.jpg"})
 d20 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u20, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488270844/dog_3_egpjs8.jpg"})
-
 
 
 starttime = [Faker::Time.forward(23), Faker::Time.forward(23), Faker::Time.backward(14)].sample

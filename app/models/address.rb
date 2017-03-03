@@ -1,7 +1,8 @@
 class Address < ApplicationRecord
-  validates :country, presence: :true
-  validates :street, presence: :true
-  validates :city, presence: :true
+  validates :country, presence: :true, if: :persisted?
+  validates :street, presence: :true, if: :persisted?
+  validates :city, presence: :true, if: :persisted?
+  has_one :user
   geocoded_by :full_street_address
   after_validation :geocode
   def full_street_address
