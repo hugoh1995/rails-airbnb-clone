@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
   #Reservation
   def reservations
-    @request = Request.find_by_user_id(current_user.id)
+    @request =  current_user.requests
   end
 
   def info

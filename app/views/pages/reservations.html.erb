@@ -1,17 +1,52 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-		<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-		  <div class="card-category">Popular</div>
-		  <div class="card-description">
-		    <h2>Some stuff</h2>
-		    <p>Very cool stuff, useful and smart</p>
-		  </div>
-		  <img class="card-user avatar" src="user.jpg">
-		  <a class="card-link" href="#" ></a>
+<h4>Future Bookings</h4>
+
+<div class="row row-request">
+	<% @request.each do |request|%>
+		<div class="photo-request col-xs-12 col-sm-4 col-md-4 col-lg-4">
+			<div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= (Dog.find(request.dog_id)).photo.url %>); background-size: 100%; height: 200px;">
+			</div>
+
+			<div class="request-info text-center">
+				<div class="name-future-bookings-dog">
+				<%= request.dog.name %>
+				</div>
+				<div class="date-future-bookings">
+				<%= request.start_datetime.strftime('%a, %d %B %Y') %> 
+				</div>
+				<div class="link-future-booking">
+					<%= link_to "Cancel", dogs_path ,:class=>"btn-cancel"  %>				
+				</div>
+			</div>
 		</div>
-    </div>
-  </div>
+	<%end%>	
 </div>
 
-<%= @request.first.user_id %>
+
+
+<!-- <h2>Awaiting Requests</h2>
+
+<div class="card-request">
+	 <div class="row row-request">
+		<% @request.each do |request|%>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				<div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= (User.find(request.user_id)).photo.url || (User.find(request.user_id)).facebook_picture_url %>); background-size: 100%; height: 200px;">
+				</div>
+
+				<div class="request-info">
+				<%= request.start_datetime %>
+				<%= request.end_datetime %>
+				<%= request.dog.user.last_name + request.dog.user.first_name %> with <%= request.dog.name %>
+				<%= link_to request.dog.user.last_name + request.dog.user.first_name, dogs_path %>
+				</div>
+			</div>
+		<%end%>	
+	</div>
+</div>	
+ -->
+
+
+
+
+
+
+
