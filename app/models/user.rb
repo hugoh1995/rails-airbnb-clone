@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   before_validation :add_address
   after_create :add_dog
+  has_many :dogs, dependent: :destroy
+  has_many :requests
+
 
   mount_uploader :photo, PhotoUploader
   # Include default devise modules. Others available are:

@@ -108,7 +108,7 @@ d16 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(150
 d17 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(3), breed: Breed.all.sample, user: u17, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488277383/13659198_10154426424439802_3999486537416213619_n_h1duam.jpg"})
 d18 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u18, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488277383/IMG_0005_ivdiks.jpg"})
 d19 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u19, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488270844/dog_3_egpjs8.jpg"})
-d20 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u20, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1488270844/dog_3_egpjs8.jpg"})
+d20 = Dog.create!({name: Faker::Pokemon.name, birthdate: Faker::Date.between(1500.days.ago, 50.days.ago), description: Faker::Lorem.sentence(1), breed: Breed.all.sample, user: u20, remote_photo_url: "http://res.cloudinary.com/diuywadr3/image/upload/v1487946062/vbfhu2rqbajd1ngiwvxh.jpg"})
 
 
 starttime = [Faker::Time.forward(23), Faker::Time.forward(23), Faker::Time.backward(14)].sample

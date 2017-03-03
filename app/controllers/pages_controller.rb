@@ -8,7 +8,11 @@ class PagesController < ApplicationController
   #human profile
   def profile
     @user = current_user
-    @address = current_user.address
+  end
+
+  #Reservation
+  def reservations
+    @request =  current_user.requests
   end
 
   def info

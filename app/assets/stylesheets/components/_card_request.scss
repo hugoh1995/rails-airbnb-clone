@@ -1,0 +1,52 @@
+.request-info {
+	background: white;
+	height: 200px;
+	border: 1px solid #dce0e0;
+	color: #dce0e0;
+	margin-bottom: 50px;
+}
+
+
+.name-future-bookings-dog{
+	font-family: 'Montserrat', sans-serif;
+	padding-bottom: 8px;
+	padding-top: 4px;
+	font-size: 30px;
+	color: #484848;
+}
+
+.date-future-bookings{
+	color: #484848;
+	font-size: 15px;
+}
+
+.link-future-booking{
+	padding-top: 20px;
+	color: #484848;
+	font-size: 15px;
+}
+
+.btn-cancel {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #058957;
+  transition: background 0.3s ease;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  margin: 40px;
+}
+
+.btn-cancel:hover {
+  opacity: 0,5;
+  background: #0c573b;
+  text-decoration: none;
+  color: white;
+}
+
+h4{
+	font-size: 30px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
