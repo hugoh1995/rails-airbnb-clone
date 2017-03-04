@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     search_params
     address = params[:place]
