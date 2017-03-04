@@ -1,10 +1,11 @@
-<div class="container">
+<div class="container container-dog">
   <div class="row">
     <div class="col-lg-4">
       <h2><%= @dog.name%></h2>
       <div class="card" style="background-image: url(<%= @dog.photo.url %>); background-size: 100%;height: 200px;">
       </div>
-      <p><%= @dog.breed.name%>, <%= (Date.today - Date.new(@dog.birthdate.year, @dog.birthdate.month, @dog.birthdate.day)).to_i / 360 %> years old.</p>
+      <% age = (Date.today - Date.new(@dog.birthdate.year, @dog.birthdate.month, @dog.birthdate.day)).to_i / 360 %>
+      <p><%= @dog.breed.name%>, <%= age %> years old.</p>
 
     </div>
     <div class="col-lg-4">
@@ -14,37 +15,25 @@
     </div>
   </div>
 </div>
-
-<div class="wrapper-request">
-  <div class="row">
-    <div class="col-lg-2">
-    </div>
-    <div class="col-lg-3">
-      <div class="row row-bg">
+<div class="container-grey">
       <%= simple_form_for [@dog, @request] do |f| %>
-          <div class="col-lg-12">
-            <div class="form-group">
-              <div class='input-group date' id='datetimepicker1'>
-                <%= f.input :start_datetime %>
-              </div>
+        <div class="container container-btn">
+          <div class="row text-center wrapper-request">
+            <div class="col-xs-12 col-lg-4 padded-top">
+              <%= f.input :start_datetime, label: false %>
             </div>
-          </div>
-          <div class="col-lg-12">
-              <%= f.input :end_datetime %>
-          </div>
-          <div class="col-lg-12">
-              <%= f.input :message %>
-          </div>
+            <div class="col-xs-12 col-lg-1 padded-top">
+              <p> to </p>
+            </div>
+            <div class="col-xs-12 col-lg-4 padded-top">
+              <%= f.input :end_datetime, label: false %>
+            </div>
               <%= f.input :dog_id, as: :hidden, input_html: {value: @dog.id} %>
               <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-          <div class="col-lg-2">
-              <%= f.button :submit, "Book", input_html: { class: 'btn btn-primary' } %>
-          </div>
+            <div class="col-xs-12 col-lg-3 padded-top-btn">
+              <%= f.button :submit, "Book a walk with #{@dog.name}", class: 'btn-book' %>
+            </div>
       <% end %>
+        </div>
       </div>
-    </div>
-  </div>
 </div>
-
-
-
