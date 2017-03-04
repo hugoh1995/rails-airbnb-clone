@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
     @request.dog = @dog
 
     if @request.save
-      redirect_to root_path
+      redirect_to pages_reservations_path
     else
       render 'requests/new'
     end
