@@ -1,0 +1,57 @@
+.subnav {
+    position: relative;
+    background-color: #fff;
+    user-select: none;
+}
+
+div {
+    display: block;
+}
+
+.padding-left {
+  padding-left: 40px;
+}
+
+.page-container-responsive {
+    width: 1080px;
+}
+
+.subnav-list {
+    margin-left: -14px;
+    margin-right: -14px;
+}
+
+.subnav-list, .sidenav-list {
+    margin-bottom: 0;
+}
+
+.list-unstyled, .list-layout, .subnav-list, .sidenav-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-left: 25px;
+}
+
+li {
+    display: list-item;
+}
+
+.subnav-text, .subnav-item {
+    position: relative;
+    float: left;
+    padding: 10px 14px;
+    color: #4CD6A3;
+}
+
+.bg-grey {
+  background: #F1F2F2;
+}
+
+.active {
+
+}
+
