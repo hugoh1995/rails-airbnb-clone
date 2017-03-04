@@ -1,0 +1,31 @@
+<div class="row bg-grey">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10 padding-left">
+    <div class="subnav hide-print">
+      <div class="page-container-responsive">
+        <ul class="subnav-list">
+          <li>
+            <a href="#" aria-selected="false" class="subnav-item" id="favorite-dogs">Profile</a>
+          </li>
+          <li>
+            <a href="#" aria-selected="false" class="subnav-item" id="profile">Itineraries and places</a>
+          </li>
+          <li>
+            <a href="#" aria-selected="false" class="subnav-item" id="reviews">Likes and dislikes</a>
+          </li>
+            <li>
+              <a href="#" class="subnav-item" id="walk-history">Badges</a>
+
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-1"></div>
+</div>
+
+<script>
+  $(".subnav-item").on("click", function(event) {
+    this.toggleClass("active");
+});
+</script>
