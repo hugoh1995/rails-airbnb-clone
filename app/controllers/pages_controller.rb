@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   #Reservation
   def reservations
     @request =  current_user.requests
+    @dog_request = Request.where(dog_id: current_user.dogs.first.id)
   end
 
   #dog_profile
