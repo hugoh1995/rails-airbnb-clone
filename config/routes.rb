@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :requests
+  resources :requests, only: [:destroy]
 
   resources :dogs, only:[:index, :show] do
     resources :requests, only: [:create]

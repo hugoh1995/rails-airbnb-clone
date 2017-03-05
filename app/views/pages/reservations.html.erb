@@ -1,7 +1,8 @@
+<div class="container">
 <h4 class="margin-left">Future Bookings (<%= @request.count %>)</h4>
 
 <div class="row row-request">
-	<% @request.each do |request|%>
+	<% @request.reverse.each do |request|%>
 		<div class="photo-request col-xs-12 col-sm-4 col-md-4 col-lg-4">
 			<div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= (Dog.find(request.dog_id)).photo.url %>); background-size: 100%; height: 200px;">
 			</div>
@@ -14,13 +15,13 @@
 				<%= request.start_datetime.strftime('%a, %d %B %Y') %>
 				</div>
 				<div class="link-future-booking">
-					<%= link_to "Cancel", dogs_path ,:class=>"btn-cancel"  %>
+					<%= link_to "Cancel", request_path(request), method: :delete, class: "btn btn-primary" %>
 				</div>
 			</div>
 		</div>
 	<%end%>
 </div>
-
+</div>
 
 
 <!-- <h2>Awaiting Requests</h2>
