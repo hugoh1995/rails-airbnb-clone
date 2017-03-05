@@ -6,15 +6,23 @@ Rails.application.routes.draw do
   end
 
   #human
-  get 'pages/profile'
-  post 'pages/info'
-  post 'pages/photo'
-  post 'pages/address'
+  get 'profiles/index'
+  post 'profiles/info'
+  post 'profiles/photo'
+  post 'profiles/address'
+
+    #favorite
+  get 'profiles/favorite_dog'
+  get 'profiles/favorite'
 
   #dog
   get 'pages/dog'
   post 'pages/dog_info'
   post 'pages/dog_photo'
+
+    #itineraries
+  get 'pages/itineraries'
+
   #Request
   get 'pages/reservations', to: 'pages#reservations'
 
