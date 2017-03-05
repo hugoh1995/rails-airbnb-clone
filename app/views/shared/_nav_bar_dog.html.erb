@@ -5,10 +5,10 @@
       <div class="page-container-responsive">
         <ul class="subnav-list">
           <li>
-            <a href="#" aria-selected="false" class="subnav-item" id="favorite-dogs">Profile</a>
+            <%= link_to "Profile", pages_dog_path, class: "subnav-item", id: "dog-profile" %>
           </li>
           <li>
-            <a href="#" aria-selected="false" class="subnav-item" id="profile">Itineraries and places</a>
+            <%= link_to "Itineraries and places", pages_itineraries_path, class: "subnav-item", id: "itineraries" %>
           </li>
           <li>
             <a href="#" aria-selected="false" class="subnav-item" id="reviews">Likes and dislikes</a>
