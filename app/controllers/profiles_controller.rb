@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
     current_user.favorites.each do |dog|
       arr << dog.dog_id
     end
-    @dogs = arr
+    @dogs = arr.uniq
   end
 
   private
