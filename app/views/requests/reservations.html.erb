@@ -2,24 +2,24 @@
 <h4 class="margin-left">Future Bookings (<%= @request.count %>)</h4>
 
 <div class="row row-request">
-	<% @request.reverse.each do |request|%>
-		<div class="photo-request col-xs-12 col-sm-4 col-md-4 col-lg-4">
-			<div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= (Dog.find(request.dog_id)).photo.url %>); background-size: 100%; height: 200px;">
+  <% @request.reverse.each do |request|%>
+    <div class="photo-request col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= (Dog.find(request.dog_id)).photo.url %>); background-size: 100%; height: 200px;">
         <%= cl_image_tag(User.find(request.user_id).photo.filename, crop: :fill, :gravity => :face, class: "avatar-large avatar-bordered") %>
-			</div>
-			<div class="request-info text-center">
-				<div class="name-future-bookings-dog">
-				<%= request.dog.name %>
-				</div>
-				<div class="date-future-bookings">
-				<%= request.start_datetime.strftime('%a, %d %B %Y') %>
-				</div>
-				<div class="link-future-booking">
-					<%= link_to "Cancel", request_path(request), method: :delete, class: "btn btn-primary" %>
-				</div>
-			</div>
-		</div>
-	<%end%>
+      </div>
+      <div class="request-info text-center">
+        <div class="name-future-bookings-dog">
+        <%= request.dog.name %>
+        </div>
+        <div class="date-future-bookings">
+        <%= request.start_datetime.strftime('%a, %d %B %Y') %>
+        </div>
+        <div class="link-future-booking">
+          <%= link_to "Cancel", request_path(request), method: :delete, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <%end%>
 </div>
 </div>
 
