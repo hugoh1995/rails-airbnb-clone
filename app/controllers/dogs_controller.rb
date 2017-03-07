@@ -24,7 +24,7 @@ class DogsController < ApplicationController
   end
 
   #dog_profile
-  def profile
+  def edit
     @dog = current_user.dogs.first
   end
 
