@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301161201) do
+ActiveRecord::Schema.define(version: 20170305105919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 20170301161201) do
     t.string   "photo"
     t.index ["breed_id"], name: "index_dogs_on_breed_id", using: :btree
     t.index ["user_id"], name: "index_dogs_on_user_id", using: :btree
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "dog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_favorites_on_dog_id", using: :btree
+    t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
   end
 
   create_table "requests", force: :cascade do |t|
@@ -88,6 +97,8 @@ ActiveRecord::Schema.define(version: 20170301161201) do
 
   add_foreign_key "dogs", "breeds"
   add_foreign_key "dogs", "users"
+  add_foreign_key "favorites", "dogs"
+  add_foreign_key "favorites", "users"
   add_foreign_key "requests", "dogs"
   add_foreign_key "requests", "users"
   add_foreign_key "users", "addresses"

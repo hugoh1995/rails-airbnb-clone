@@ -1,38 +1,15 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:home]
   #homepage
   def home
     @dogs = Dog.all
     @users = User.all
   end
 
-  #human profile
-  def profile
-    @user = current_user
-  end
-
   #Reservation
   def reservations
     @request =  current_user.requests
-  end
-
-  def info
-    current_user.update_attributes(user_params)
-    redirect_to(:back)
-  end
-
-  def photo
-    current_user.update_attributes(photo_params)
-    redirect_to(:back)
-  end
-
-  def address
-    current_user.address.update_attributes(address_params)
-    redirect_to(:back)
-  end
-
-  #Reservation
-  def reservations
-    @request = Request.find_by_user_id(current_user.id)
+    @dog_request = Request.where(dog_id: current_user.dogs.first.id)
   end
 
   #dog_profile
@@ -52,20 +29,13 @@ class PagesController < ApplicationController
     redirect_to(:back)
   end
 
+  #itineraries
+  def itineraries
+    @dog = current_user.dogs.first
+    @user = current_user
+  end
+
   private
-
-  #human profile
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone_number, :description, :dogs)
-  end
-
-  def photo_params
-    params.require(:user).permit(:photo, :photo_cache)
-  end
-
-  def address_params
-    params.require(:address).permit(:city, :street, :country)
-  end
 
   #dog profile
   def dog_params

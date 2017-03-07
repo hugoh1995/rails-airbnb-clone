@@ -3,7 +3,8 @@ class User < ApplicationRecord
   after_create :add_dog
   has_many :dogs, dependent: :destroy
   has_many :requests
-
+  has_many :favorites
+  belongs_to :address
 
   mount_uploader :photo, PhotoUploader
   # Include default devise modules. Others available are:
@@ -11,9 +12,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
-
-  has_many :dogs, dependent: :destroy
-  belongs_to :address
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
@@ -37,10 +35,12 @@ class User < ApplicationRecord
   end
 
   def add_dog
+    return unless self.dogs.empty?
     self.dogs.create(breed: Breed.find_by(name: "default"))
   end
 
   def add_address
+    return if self.address.present?
     self.address = Address.new(country: "", city: "", street: "")
   end
 end
