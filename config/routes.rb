@@ -6,26 +6,23 @@ Rails.application.routes.draw do
   end
 
   #human
-  get 'profiles/index'
+  get 'profiles/edit'
   post 'profiles/info'
   post 'profiles/photo'
   post 'profiles/address'
 
     #favorite
   get 'profiles/favorite_dog'
-  get 'profiles/favorite'
+  get 'profiles/wishlist'
 
   #dog
-  get 'pages/dog'
-  post 'pages/dog_info'
-  post 'pages/dog_photo'
-
-    #itineraries
-  get 'pages/itineraries'
+  get 'dog_profile', to: "dogs#edit"
+  post 'dogs/dog_info'
+  post 'dogs/dog_photo'
 
   #Request
-  get 'pages/reservations', to: 'pages#reservations'
+  get 'requests/reservations', to: 'requests#reservations'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  root to: 'pages#home'
+  root to: 'pages#index'
 end

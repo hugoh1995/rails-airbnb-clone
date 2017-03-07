@@ -15,9 +15,9 @@
     </form>
 
     <!-- Text link -->
-    <%= link_to "My requests", pages_reservations_path, class: "navbar-wagon-item navbar-wagon-link navbar-wagon-text" %>
+    <%= link_to "My requests", requests_reservations_path, class: "navbar-wagon-item navbar-wagon-link navbar-wagon-text" %>
     <!-- Text link -->
-    <%= link_to "My dog", pages_dog_path, class: "navbar-wagon-item navbar-wagon-link navbar-wagon-text" %>
+    <%= link_to "My dog", dog_profile_path, class: "navbar-wagon-item navbar-wagon-link navbar-wagon-text" %>
 
     <!-- Profile picture and dropdown -->
 
@@ -27,7 +27,7 @@
            <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
              <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
                <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-                 <li><%= link_to "Profile", profiles_index_path %>
+                 <li><%= link_to "Profile", profiles_edit_path %>
                  <li><%= link_to "log out", destroy_user_session_path, method: :delete%></li>
                </ul>
          </div>

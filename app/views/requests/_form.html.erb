@@ -1,7 +1,0 @@
-<%= simple_form_for @request do |f| %>
-        <%= f.input :start_datetime %>
-        <%= f.input :end_datetime %>
-        <%= f.input :dog_id, input_html: {value: @dog.id} %>
-        <%= f.input :user_id, input_html: {value: current_user.id} %>
-        <%= f.button :submit, "Send request" %>
-<% end %>

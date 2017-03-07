@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
 	#human profile
-  def index
+  def edit
     @user = current_user
   end
 
@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
     redirect_to(:back)
   end
 
-  def favorite
+  def wishlist
     arr = []
     @dogs = []
     current_user.favorites.each do |dog|

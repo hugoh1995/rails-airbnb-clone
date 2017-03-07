@@ -27,6 +27,11 @@ class RequestsController < ApplicationController
     redirect_to pages_reservations_path
   end
 
+  def reservations
+    @request =  current_user.requests
+    @dog_request = Request.where(dog_id: current_user.dogs.first.id)
+  end
+
   private
 
   def request_params

@@ -23,9 +23,35 @@ class DogsController < ApplicationController
     @addresses = Address.all
   end
 
+  #dog_profile
+  def edit
+    @dog = current_user.dogs.first
+  end
+
+  def dog_info
+    @dog = Dog.find(params[:id])
+    @dog.update_attributes(dog_params)
+    redirect_to(:back)
+  end
+
+  def dog_photo
+    @dog = Dog.find(params[:id])
+    @dog.update_attributes(dog_photo_params)
+    redirect_to(:back)
+  end
+
   private
 
   def search_params
     params.permit(:place)
+  end
+
+  #dog profile
+  def dog_params
+    params.require(:dog).permit(:name, :description, :birthdate, :breed_id)
+  end
+
+  def dog_photo_params
+    params.require(:dog).permit(:photo, :photo_cache)
   end
 end
